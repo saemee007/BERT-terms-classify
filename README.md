@@ -24,28 +24,39 @@
 <Br>  
 
 ## How to Install
-    
+Use `conda`:
+   ```
     conda env create -n gameTerms -f environment.yaml
     conda activate gameTerms
-  
+   ```
+   
 ## Usage
     
-+ Train
++ **Train**
+   
+   The BERT model is fine-tuned with the dataset in `./label/`,  
+   and the trained model is stored in `./model/bert_over.h5`  
     ```
     python run.py -k train -d ./label/ -m ./model/bert_over.h5 -o 10
     ```
-+ Test
++ **Test**
+   
+   Performance evaluation with data stored in `./test/`  
+   by loading a model stored in `./model/bert_over.h5`  
     ```    
     python run.py -k test -d ./test/ -m ./model/bert_over.h5
     ```
-+ Predict
++ **Predict**
+   
+   Load the model stored in `./model/bert_over.h5`  
+   to predict whether the data in `./predict/` is unfair  
+   and store the results in `./result/
     ```
     python run.py -k predict -d ./predict/ -m ./model/bert_over.h5 -r ./result/
     ```
     
 ## Citaion
-하위 코드를 참고하실 경우, 다음의 문구를 언급해주시기 바랍니다.  
-If you refer to the subcode, please attach to the following phrase.
+If you refer to the code, please attach to the following phrase.
   ```
   Choi, S. M. (2021). GitHub - saemee007/gameTerms_BERT: Using deep learning, the unfairness score of the game company’s terms and conditions is calculated. GitHub. https://github.com/saemee007/gameTerms_BERT
   ```  
